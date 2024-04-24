@@ -1,0 +1,9 @@
+img {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hero img {
+    max-width: 100%;
+  }
+}

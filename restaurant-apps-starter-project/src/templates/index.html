@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Apps</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <app-bar></app-bar>
+    <hero-element>
+      <img src="./images/heros/hero-image_1.jpg" width="450" alt="" />
+      <img src="./images/heros/hero-image_2.jpg" width="450" alt="" />
+      <img src="./images/heros/hero-image_3.jpg" width="450" alt="" />
+      <img src="./images/heros/hero-image_4.jpg" width="450" alt="" />
+    </hero-element>
+
+    <!-- Define the restaurant-list custom element -->
+    <restaurant-list></restaurant-list>
+
+    <!-- Fetch the restaurant data -->
+    <script
+      id="restaurant-data"
+      type="application/json"
+      src="./data/DATA.json"
+    ></script>
+
+    <!-- Include the restaurant-list.js script -->
+    <script src="restaurant-list.js"></script>
+  </body>
+</html>
