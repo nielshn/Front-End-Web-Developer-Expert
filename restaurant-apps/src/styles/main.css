@@ -1,0 +1,416 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #2c3e50;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav-link {
+  transition: 0.7s ease;
+  font-size: 1rem;
+  padding: 12px 20px;
+  display: inline-block;
+}
+
+.nav-link:hover {
+  color: dodgerblue;
+  text-shadow: 0 0 5px dodgerblue;
+}
+
+/* Style hover untuk drawer hamburger */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+.nav-branding a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  display: inline-block;
+}
+
+.nav-branding a:hover {
+  color: dodgerblue;
+  text-shadow: 0 0 5px dodgerblue;
+}
+
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Hero Carousel */
+.hero-carousel {
+  width: 100%;
+  max-height: calc(100vh - 100px);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  animation: slideFade 1s ease forwards;
+}
+
+/* Restaurant List */
+.restaurant-list {
+  margin-top: 10em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card:hover {
+  transform: translateY(-10px) rotateX(5deg);
+}
+
+.card:hover .card-content {
+  transform: translateY(100%) rotateX(-5deg);
+}
+
+.card-img-container {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-img-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-container img {
+  transform: scale(1.1);
+}
+
+.card-place {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.card-rating {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.card-content {
+  padding: 15px;
+  position: absolute;
+  border-radius: 1em 1em 8px 8px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: bottom;
+}
+
+.card-content-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-content-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Skip to content */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+}
+
+.skip-to-content a {
+  font-size: 0.9rem;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px;
+  background-color: #2c3e50;
+  color: white;
+  z-index: 100;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 1200px) {
+  .restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+  }
+
+  .card-img-container {
+    height: 200px;
+    overflow: visible;
+  }
+
+  .card-content {
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    transform-origin: bottom;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 1em 1em 8px 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .card-content-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-content-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-rating {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  @keyframes hamburgerOpen {
+    0% {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+
+  @keyframes hamburgerClose {
+    0% {
+      transform: rotate(180deg);
+    }
+    50% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+  /* Hamburger Button */
+  .hamburger {
+    display: block;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .bar {
+    display: block;
+    width: 80%;
+    height: 3px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  .bar:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .bar:nth-child(2) {
+    transform: translate(-50%, -50%);
+  }
+
+  .bar:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-135deg);
+  }
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #262626;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .nav-item {
+    padding: 10px;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 15px 15px;
+    display: inline-block;
+  }
+
+  .nav-link:hover {
+    color: dodgerblue;
+  }
+
+  .nav-menu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  .hero-carousel img {
+    max-height: 300px;
+  }
+  /* .restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+  } */
+
+  .card-content-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-content-description {
+    font-size: 12px;
+  }
+}
