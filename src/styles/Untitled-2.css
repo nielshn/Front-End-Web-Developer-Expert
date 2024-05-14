@@ -1,0 +1,61 @@
+/* Perubahan pada gaya CSS */
+
+/* AppBar */
+.app-bar {
+  padding: 8px 16px;
+  background-color: #2c3e50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.app-bar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar__brand h1 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 22px;
+  margin: 0;
+}
+
+.app-bar__navigation {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar__navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Mengubah menu menjadi horizontal */
+}
+
+.app-bar__navigation ul li {
+  margin-right: 20px; /* Jarak antar menu */
+}
+
+.app-bar__navigation ul li:last-child {
+  margin-right: 0; /* Menghilangkan margin kanan pada menu terakhir */
+}
+
+.app-bar__navigation ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px;
+}
+
+/* Style untuk hamburger */
+.hamburger {
+  display: none; /* Sembunyikan hamburger pada tampilan desktop */
+}
+
+/* Tambahkan gaya untuk menu aktif */
+.nav-menu.active {
+  display: flex;
+}
