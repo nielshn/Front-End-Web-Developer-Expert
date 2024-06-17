@@ -1,0 +1,373 @@
+@media screen and (max-width: 1200px) {
+  .restaurant-list,
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .card-img-container {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .card-content-description {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2;
+    line-height: 1.5;
+  }
+
+  .card-content {
+    padding: 15px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .card-content-title {
+    font-size: 1.2rem;
+  }
+
+  .card-rating {
+    font-size: 14px;
+  }
+
+  .card:hover .card-content {
+    transform: translateY(0);
+  }
+
+  .detail-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .detail-img-container {
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .detail-content {
+    padding: 15px;
+  }
+
+  .detail-title {
+    font-size: 1.5rem;
+  }
+
+  .detail-description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .detail-rating {
+    font-size: 14px;
+  }
+
+  .detail-reviews.card .reviews .review {
+    width: 48%;
+    min-width: 280px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .restaurant-list,
+  .container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .card-content-title {
+    font-size: 1rem;
+  }
+
+  .card-content-description {
+    font-size: 0.8rem;
+  }
+
+  .detail-header {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .detail-title {
+    font-size: 1.2rem;
+  }
+
+  .detail-description {
+    font-size: 0.9rem;
+  }
+  .detail-reviews.card {
+    padding: 15px;
+  }
+
+  .detail-reviews.card h3 {
+    font-size: 1.2rem;
+  }
+
+  .detail-reviews.card .reviews .review {
+    width: 100%;
+    min-width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .detail-reviews.card .reviews {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .skip-to-content,
+  .skip-link {
+    display: none;
+  }
+  .app-bar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
+  }
+  .app-bar__menu {
+    justify-content: flex-end;
+  }
+  .app-bar__brand {
+    order: -1;
+  }
+  .detail-section {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-header,
+  .detail-content,
+  .detail-reviews {
+    margin-bottom: 20px;
+  }
+
+  .detail-header img {
+    max-height: 200px;
+  }
+
+  .detail-title {
+    font-size: 1rem;
+  }
+
+  .detail-description {
+    font-size: 0.8rem;
+  }
+
+  .detail-reviews {
+    font-size: 0.8rem;
+  }
+  .detail-reviews.card {
+    padding: 10px;
+  }
+
+  .detail-reviews.card h3 {
+    font-size: 1rem;
+  }
+
+  .detail-reviews.card .reviews .review {
+    padding: 15px;
+    border-radius: 6px;
+  }
+
+  .detail-reviews.card .reviews .review .review-comment {
+    font-size: 0.9rem;
+  }
+
+  @keyframes hamburgerOpen {
+    0% {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+
+  @keyframes hamburgerClose {
+    0% {
+      transform: rotate(180deg);
+    }
+    50% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+  /* Hamburger Button */
+  .hamburger {
+    display: block;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .bar {
+    display: block;
+    width: 80%;
+    height: 3px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  .bar:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .bar:nth-child(2) {
+    transform: translate(-50%, -50%);
+  }
+
+  .bar:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-135deg);
+  }
+
+  .app-bar__navigation ul {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 60%;
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid #ccc;
+  }
+
+  .app-bar__navigation ul li {
+    margin: 20px 0;
+  }
+  .app-bar__navigation ul li a {
+    text-decoration: none;
+    color: #2c3e50;
+    transition: color 0.7s ease;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .app-bar__navigation ul li a:hover {
+    color: dodgerblue;
+    text-shadow: 0 0 5px dodgerblue;
+  }
+
+  .app-bar__navigation ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: transparent;
+    transform: scaleX(0);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-menu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  .hero-carousel img {
+    max-height: 300px;
+  }
+
+  .card-content-title {
+    font-family: "Varela Round", sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-content-description {
+    font-family: "Arial", sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+  }
+
+  /* Gaya typografi untuk teks footer */
+  .footer {
+    font-family: "Arial", sans-serif;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .app-bar__menu button.menu-toggle {
+    display: block;
+  }
+
+  .app-bar__menu button.menu-toggle.active + .app-bar__navigation ul {
+    display: flex;
+  }
+
+  .skip-link {
+    top: 0;
+  }
+
+  .card-content {
+    padding: 10px;
+  }
+
+  .card-rating {
+    font-size: 12px;
+  }
+
+  .card-content-title {
+    font-size: 0.9rem;
+  }
+
+  .card-content-description {
+    font-size: 0.7rem;
+  }
+
+  .btn-favorite-delete {
+    
+    padding: 8px 12px;
+  }
+}

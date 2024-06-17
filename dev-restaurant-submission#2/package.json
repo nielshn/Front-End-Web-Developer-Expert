@@ -1,0 +1,50 @@
+{
+  "name": "restaurant-apps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "serve": "http-server dist --port 9020",
+    "build-serve": "npm run build && npm run serve",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "keywords": [],
+  "author": "Daniel Siahaan <dsiahaan581@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@eslint/js": "^9.4.0",
+    "@jest/globals": "^29.6.1",
+    "@types/jest": "^29.5.3",
+    "babel-jest": "^29.6.1",
+    "babel-loader": "^8.3.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.11.0",
+    "eslint": "^9.4.0",
+    "fake-indexeddb": "^4.0.2",
+    "globals": "^15.4.0",
+    "html-webpack-plugin": "^5.6.0",
+    "http-server": "^14.1.1",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.2",
+    "webpack-merge": "^5.10.0",
+    "whatwg-fetch": "^3.6.2",
+    "workbox-webpack-plugin": "^7.1.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "idb": "^8.0.0",
+    "regenerator-runtime": "^0.14.1",
+    "sweetalert2": "^11.11.1",
+    "workbox-window": "^7.1.0"
+  }
+}
